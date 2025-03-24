@@ -21,7 +21,7 @@ export const signup = async (req: Request, res: Response) => {
         // Create a new user
 
     } catch (error) {
-        
+        res.status(500).json({ message: 'Internal server error' });
     }
 };
 export const login = async (req: Request, res: Response) => {};
