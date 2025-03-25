@@ -1,3 +1,4 @@
+import cookieParser from 'cookie-parser';
 import { config } from 'dotenv';
 import express from 'express';
 import authRoutes from './src/routes/auth.routes.js';
@@ -6,7 +7,8 @@ import messageRoutes from './src/routes/message.routes.js';
 const app = express();
 config();
 
-
+app.use(express.json());
+app.use(cookieParser()); //for parsing cookies
 
 
 app.get('/', (req, res) => {
