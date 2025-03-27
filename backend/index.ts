@@ -22,3 +22,6 @@ app.use('/api/messages', messageRoutes);
 app.listen(5000, () => {
   console.log('Server is running on http://localhost:5000');
 });
+
+//add socket.io here
+//configure this server for the deployment

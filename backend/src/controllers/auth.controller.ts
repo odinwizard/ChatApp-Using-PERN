@@ -78,7 +78,7 @@ export const login = async (req: Request, res: Response) => {
 export const logout = async (req: Request, res: Response) => {
     try {
         res.cookie('jwt', '', {maxAge: 0});
-        res.status(200).json({ message: 'Logged out successfully' });
+        return res.status(200).json({ message: 'Logged out successfully' });
     } catch (error: any) {
         console.log(error.message);
         res.status(500).json({ message: 'Internal server error for logout' });  
@@ -91,7 +91,7 @@ export const getMe = async (req: Request, res: Response) => {
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
-        res.status(200).json({
+        return res.status(200).json({
             id: user.id,
             fullName: user.fullName,
             username: user.username,
