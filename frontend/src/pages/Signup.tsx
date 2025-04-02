@@ -36,13 +36,14 @@ const Signup = () => {
             </h1>
 
             <form onSubmit={handleSubmitForm}>
+                <div className="flex flex-col gap-2">
                 <div>
                 <label className='label p-2 text-white'>
 							<span className='text-base label-text'>Full Name</span>
 						</label>
 						<input
 							type='text'
-							placeholder='John Doe'
+							placeholder='Enter Your FullName'
 							className='w-full input input-bordered  h-10'
 							value={inputs.fullName}
 							onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
@@ -54,7 +55,7 @@ const Signup = () => {
 						</label>
 						<input
 							type='text'
-							placeholder='johndoe'
+							placeholder='@UserName'
 							className='w-full input input-bordered h-10'
 							value={inputs.username}
 							onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
@@ -66,7 +67,7 @@ const Signup = () => {
 						</label>
 						<input
 							type='password'
-							placeholder='Enter Password'
+							placeholder='Enter Your Password'
 							className='w-full input input-bordered h-10'
 							value={inputs.password}
 							onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
@@ -78,16 +79,19 @@ const Signup = () => {
 						</label>
 						<input
 							type='password'
-							placeholder='Confirm Password'
+							placeholder='Enter Confirm Password'
 							className='w-full input input-bordered h-10'
 							value={inputs.confirmPassword}
 							onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
 						/>
                 </div>
+                <div>
                 <GenderCheckbox
                  selectedGender={inputs.gender} 
                  onCheckboxChange={handleCheckboxChange} 
                  />
+                </div>
+                </div>
                 <Link to={"/login"}
                 className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block text-white'
                 >Already have an account?</Link>

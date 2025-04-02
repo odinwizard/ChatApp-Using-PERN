@@ -7,6 +7,8 @@ import messageRoutes from './src/routes/message.routes.js';
 const app = express();
 config();
 
+const PORT = process.env.PORT || 5001;
+
 app.use(express.json());
 app.use(cookieParser()); //for parsing cookies
 
@@ -19,8 +21,8 @@ app.use('/api/messages', messageRoutes);
 
  
 
-app.listen(5000, () => {
-  console.log('Server is running on http://localhost:5000');
+app.listen(PORT, () => {
+  console.log('Server is running on port' + PORT);
 });
 
 //add socket.io here
